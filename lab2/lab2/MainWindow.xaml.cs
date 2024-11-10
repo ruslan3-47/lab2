@@ -16,9 +16,9 @@ namespace lab2
 
     public partial class MainWindow : Window
     {
-        private Matrix matrix1;
-        private Matrix matrix2;
-        private Matrix result;
+        private Matrix<int> matrix1;
+        private Matrix<int> matrix2;
+        private Matrix<int> result;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,12 +29,12 @@ namespace lab2
             int rows = int.Parse(Rows.Text);
             int columns = int.Parse(Columns.Text);
 
-            matrix1 = new Matrix(rows, columns);
-            matrix2 = new Matrix(rows, columns);
+            matrix1 = new Matrix<int>(rows, columns);
+            matrix2 = new Matrix<int>(rows, columns);
             CreateGrid(Matrix1grid, matrix1);
             CreateGrid(Matrix2grid, matrix2);
         }
-        private static void CreateGrid(Grid grid,Matrix matrix)
+        private static void CreateGrid(Grid grid,Matrix<int> matrix)
         {
             grid.Children.Clear();
             grid.RowDefinitions.Clear();

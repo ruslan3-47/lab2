@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace lab2
 {
-    public class Matrix
+    public class Matrix<T> where T : IAdditionOperators<T,T,T>, IMultiplyOperators<T,T,T>
     {
         public int Row {  get; set; }
         public int Col { get; set; }
-        public int[,] Data;
+        public T[,] Data;
         public Matrix(int row,int column) {
             Row = row;
             Col = column;
-            Data = new int[row,column];
+            Data = new T[row,column];
         }
-        public int this[int row, int column]
+        public T this[int row, int column]
         {
             get
             {
@@ -32,13 +33,13 @@ namespace lab2
                 Data[row,column] = value;
             }
         }
-        public static Matrix operator +(Matrix a, Matrix b)
+        public static Matrix<T> operator +(Matrix<T> a, Matrix<T> b)
         {
             if(a.Col != b.Col || a.Row != b.Row)
             {
                 throw new ArgumentException("Введите корректные размерности");
             }
-            Matrix result = new Matrix(a.Row,a.Col);
+            Matrix<T> result = new Matrix<T>(a.Row,a.Col);
             for (int i = 0; i < a.Row; i++) 
                   { 
                     for (int j = 0; j < a.Col; j++)
@@ -48,13 +49,13 @@ namespace lab2
                 }
             return result;
         }
-        public static Matrix operator *(Matrix a, Matrix b)
+        public static Matrix<T> operator *(Matrix<T> a, Matrix<T> b)
         {
             if (a.Col != b.Row)
             {
                 throw new ArgumentException("Введите корректные размерности");
             }
-            Matrix result = new Matrix(a.Row, b.Col);
+            Matrix<T> result = new Matrix<T>(a.Row, b.Col);
             for (int i = 0;i < a.Row;i++)
             {
                 for (int j = 0;j < b.Col;j++)

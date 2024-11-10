@@ -18,3 +18,4 @@ D:\hogwarts\labi\labs\lab2\lab2\lab2\obj\Debug\net8.0-windows\refint\lab2.dll
 D:\hogwarts\labi\labs\lab2\lab2\lab2\obj\Debug\net8.0-windows\lab2.pdb
 D:\hogwarts\labi\labs\lab2\lab2\lab2\obj\Debug\net8.0-windows\lab2.genruntimeconfig.cache
 D:\hogwarts\labi\labs\lab2\lab2\lab2\obj\Debug\net8.0-windows\ref\lab2.dll
+D:\hogwarts\labi\labs\lab2\lab2\lab2\obj\Debug\net8.0-windows\lab2.sourcelink.json
