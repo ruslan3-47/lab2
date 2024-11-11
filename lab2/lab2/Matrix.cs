@@ -14,6 +14,10 @@ namespace lab2
         public int Col { get; set; }
         public T[,] Data;
         public Matrix(int row,int column) {
+            if (row <= 0 || column<=0)
+            {
+                throw new ArgumentException("не коректный размер матриц");
+            }
             Row = row;
             Col = column;
             Data = new T[row,column];
